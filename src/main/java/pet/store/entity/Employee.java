@@ -25,13 +25,14 @@ public class Employee {
 	
 	@Column(unique = true)
 	private String employeePhone;
+	
 	private String employeeJobTitle;
 	
 	
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "pet_store_id")
-	PetStore petStore;
+	@JoinColumn(name = "pet_store_id", nullable = false)
+	private PetStore petStore;
 	
 }
